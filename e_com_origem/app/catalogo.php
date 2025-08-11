@@ -36,7 +36,7 @@ function carregarProdutos() {
         ],
         [
             'id' => 6,
-            'nome' => 'Tablet Master 11"',
+            'nome' => 'Tablet Master "11"',
             'imagem' => 'images/produto6.jpg',
             'descricao' => 'Ideal para trabalho, estudos e entretenimento com sua tela de alta resolução.',
             'preco' => 2999.00,
@@ -72,9 +72,9 @@ function carregarProdutos() {
     }
 
     foreach ($produtos as &$produto) {
-        if (isset($promocoes[$produto['id']]) && $promocoes[$produto['id']] == 'sim') {
+        if (isset($promocoes[$produto['id']]) && strtolower(trim($promocoes[$produto['id']])) == 'sim') {
             $produto['preco_original'] = $produto['preco'];
-            $produto['preco'] = $produto['preco'] * 0.90; // Aplica 10% de desconto
+            $produto['preco'] = $produto['preco'] * 0.90; // Aplica 10% de desconto 
         }
     }
 

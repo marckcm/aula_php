@@ -49,6 +49,9 @@ $produtos = carregarProdutos();
                             R$ <?php echo number_format($produto['preco'], 2, ',', '.'); ?>
                             <?php if (isset($produto['preco_original'])): ?>
                                 <span class="preco-original">R$ <?php echo number_format($produto['preco_original'], 2, ',', '.'); ?></span>
+                                <!-- colocado um badge de desconto para informar o valor de desconto 
+                                depois pode ser alterado para pegar na formula-->
+                                <span class="desconto-badge">-10%</span>
                             <?php endif; ?>
                         </div>
 
